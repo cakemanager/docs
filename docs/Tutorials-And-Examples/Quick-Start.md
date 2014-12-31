@@ -79,9 +79,49 @@ After loading the plugin we have to load the base-component: CakeManager.Manager
 There are multiple configurations for the manager-component. 
 See the [Manager Component](../Components/Manager.md) for detailed documentation about the Manager-component.
 
-Loging in
+### Adding isAuthorized-method
+
+If you reload your web-page you will probably get an error. Because we chose that the controller has to authorize, our `AppController` needs an isAuthorized-method.
+
+    public function isAuthorized($user) {
+
+        if ($this->IsAuthorized->behaviorIsset()) {
+            return $this->IsAuthorized->authorize();
+        }
+
+        return true;
+    }
+
+Adding menu-items
+-----------------
+
+The admin-section uses the area 'main' for the default menu. Let's add an menu-item.
+At first we create a new method in our `AppController` to store menu-items.
+
+    public function adminMenuItems() {
+
+        $this->Menu->add('My new Item', [
+            'url' => [
+                'plugin'     => false',
+                'prefix'     => 'admin',
+                'controller' => 'CustomController',
+                'action'     => 'index'
+            ]
+        ]);
+
+    }
+    
+Then we call this method in our `beforeFilter`-callback.
+
+    public function beforeFilter($event) {
+        parent::beforeFilter($event);
+
+        $this->adminMenuItems();
+    }
+
+Having fun
 ---------
-The CakeManager is set, we are now able to login! Go to yourdomain.com/login to login and start happy coding! 
+The CakeManager is set, we are now able to login, and manage our back-end. Go to yourdomain.com/login to login and start happy coding! 
 Good luck!
 
 Bob Mulder
