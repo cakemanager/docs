@@ -102,7 +102,7 @@ At first we create a new method in our `AppController` to store menu-items.
 
         $this->Menu->add('My new Item', [
             'url' => [
-                'plugin'     => false',
+                'plugin'     => false,
                 'prefix'     => 'admin',
                 'controller' => 'CustomController',
                 'action'     => 'index'
