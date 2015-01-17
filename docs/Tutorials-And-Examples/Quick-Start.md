@@ -11,7 +11,7 @@ Getting the CakeManager
 -----------------------
 We asume you already got a new project of CakePHP. You can call the plugin via composer:
 
-    "bobmulder/cakephp-cakemanager": "dev-master"
+    "cakemanager/cakephp-cakemanager": "dev-master"
 
 After that we need to load our plugin in our `config/bootstrap.php`. We also need the Migrations-plugin from CakePHP to load our tables.
 
