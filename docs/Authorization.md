@@ -14,13 +14,10 @@ If you want to disable the AuthComponent for loading it by yourself use:
     $this->Manager->config('components.Auth', false);
 
 
-RolesAuthorize
---------------
+RoleBased Authorization
+-----------------------
 
-Instead of the `ControllersAuthorize`, the CakeManager uses the `RolesAuthorize`.
-This Authorize checks on default prefixes (like admin), and checks if users are allowed (by role-definition) to that prefix.
-
-If there is no prefix set, the `isAuthorize($user)` method will be requested from your controller.
+We use as default the `ControllerAuthorize` from Cake itself. That means authorization will be done by the controllers method `isAuthorized`. We have built a role-based helper-component for this way. [Check it out!](Components/Authorizer.md)
 
 > Note: The `isAuthorized`-method must exist, else an exception will raise.
 
@@ -43,12 +40,11 @@ CakeManager has the following configuration:
     ];
     
 Remember CM automatically creates roles in your database? Here they are asigned to a role-definition of the CakeManager.
-The CakeManager uses this role-definition to allow multiple roles (db) to a single role (app). Look at this example:
+The CakeManager uses this role-definition to allow multiple roles (db) to a single role (app). Look at this examples:
 
 ### Adding Roles to the Role-Definition
 
     If you want to allow Moderators to the admin-section;
-
     Configure::write('CM.Roles.Administrators', [1, 2]);
     
 Now, the Moderators (id = 2) are added to the Administrator-definition. 
@@ -75,5 +71,11 @@ This method will check if a user is a non-logged-in user.
 
 > Note: Unregistered User means a non-logged-in user. This role can be usefull with ACL.
 
+### Using Role-Definitions
 
-If you use the 'Roles-Authorize' from CM, it will automatically allow the Moderators to the admin-section.
+Role-Definitons can be usefull when you use a big plugin who uses multiple roles. They will be able to use your definitions for your application. You can get definitions by the following.
+
+    // getting the administrator-roles
+    Configure::write('CM.Roles.Administrators');
+    
+`Administrators` can be replaced by `Moderators`, `Users` and `Unregistered`.
