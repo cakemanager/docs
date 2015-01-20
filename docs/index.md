@@ -24,6 +24,7 @@ Table Of Contents
 
 * [Installation](Installation.md)
 * [Configurations](Configurations.md)
+* [Authorization](Authorization.md)
 
 To Do
 -----
