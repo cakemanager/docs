@@ -1,6 +1,14 @@
 Authorization
 =============
 
+In this section we will talk about how authorization is managed by the CakeManager. 
+A short summary: 
+
+* The `ManagerComponent` automatically loads the `AuthComponent`.
+* Because CakeManager uses `ControllerAuthorize` we built a RoleBased `AuthorizerComponent`.
+* To easily manage your roles (for plugins) we use [Role-Definitions](#Role-Definitions)
+
+
 AuthComponent
 -------------
 
@@ -21,8 +29,8 @@ We use as default the `ControllerAuthorize` from Cake itself. That means authori
 
 > Note: The `isAuthorized`-method must exist, else an exception will raise.
 
-Roles
------
+Role-Definitions
+----------------
 
 There are 4 default role-definitions:
 - Administrators
