@@ -1,2 +1,0 @@
-Authorizer-Component
-====================
