@@ -138,4 +138,4 @@ Further reading
 
 Read more about the [IsAuthorized-Component](IsAuthorized.md).
 
-You can follow a quick tutorial [here]();
+You can follow a quick tutorial [here](./Tutorials-And-Examples/Authorization.md);
