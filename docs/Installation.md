@@ -13,13 +13,13 @@ Installing CakeManager
 
 We asume you already got a new project of CakePHP. You can call the plugin via composer:
 
-    "bobmulder/cakephp-cakemanager": "dev-master"
+    "cakemanager/cakephp-cakemanager": "dev-master"
 
 After that we need to load our plugin in our config/bootstrap.php. We also need the Migrations-plugin from CakePHP to load our tables.
 
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true, 'autoload' => true]);
     Plugin::load('Migrations');
-
+    Plugin::load('Crud');
 
 Adding the component
 ----------
@@ -29,9 +29,11 @@ After loading the plugin we have to load the base-component: `CakeManager.Manage
     public function initialize() {
         
         // code
-
-        $this->loadComponent('CakeManager.Manager');
         
+        $this->loadComponent('CakeManager.Manager');
+        $this->loadComponent('CakeManager.Authorizer'); // must have for your authorization
+        $this->loadComponent('CakeManager.IsAuthorized'); // should have for your authorization
+           
         // code
         
     }
