@@ -5,7 +5,7 @@ The best way to experience and learn CakeManager is to sit down and build someth
 
 Beginner Tutorial
 ===================
-In this tutorial we will add our CakeManager. So, that means we will have our login-system, and will be able to use extra plugins to make our work easier
+In this tutorial we will add our CakeManager. So, that means we will have our login-system, and will be able to use extra plugins to make our work easier. We asume you already did the [QuikStart-tutorial from CakePHP](http://book.cakephp.org/3.0/en/quickstart.html).
 
 Getting the CakeManager
 -----------------------
@@ -69,6 +69,9 @@ After loading the plugin we have to load the base-component: CakeManager.Manager
             // code
         
             $this->loadComponent('CakeManager.Manager');
+            
+            $this->loadComponent('CakeManager.Authorizer'); // must have for your authorization
+            $this->loadComponent('CakeManager.IsAuthorized'); // should have for your authorization
         
             // code
         
@@ -81,15 +84,27 @@ See the [Manager Component](../Components/Manager.md) for detailed documentation
 
 ### Adding isAuthorized-method
 
-If you reload your web-page you will probably get an error. Because we chose that the controller has to authorize, our `AppController` needs an isAuthorized-method.
+If you reload your web-page you will probably get an error. Because we chose that the controller has to authorize, our `AppController` needs an `isAuthorized()`-method. Create the following method in your `BookMarksController`.
 
     public function isAuthorized($user) {
-
-        if ($this->IsAuthorized->behaviorIsset()) {
-            return $this->IsAuthorized->authorize();
-        }
-
-        return true;
+        
+        // allows adminstrators (1) to all actions (*)
+        $this->Authorizer->action(['*'], function($auth) {
+            $auth->allowRole([1]);
+        });
+        
+        // Moderators (2) can only view, edit and delete their own bookmarks
+        $this->Authorizer->action(['edit', 'delete'], function($auth) {
+            $auth->setRole([2], $this->IsAuthorized->authorize());
+        });
+            
+        // Moderators (2) are ALSO able to add bookmarks
+        $this->Authorizer->action(['add'], function($auth) {
+            $auth->allowRole([2]);
+        });
+        
+        return $this->Authorizer->authorize();
+        
     }
 
 Adding menu-items
@@ -99,8 +114,8 @@ The admin-section uses the area 'main' for the default menu. Let's add an menu-i
 At first we create a new method in our `AppController` to store menu-items.
 
     public function adminMenuItems() {
-
-        $this->Menu->add('My new Item', [
+                    
+        $this->Menu->add('My new Item', [   
             'url' => [
                 'plugin'     => false,
                 'prefix'     => 'admin',
@@ -108,22 +123,16 @@ At first we create a new method in our `AppController` to store menu-items.
                 'action'     => 'index'
             ]
         ]);
-
+        
     }
     
 Then we call this method in our `beforeFilter`-callback.
 
     public function beforeFilter($event) {
         parent::beforeFilter($event);
-
+        
         $this->adminMenuItems();
     }
 
-Having fun
----------
-The CakeManager is set, we are now able to login, and manage our back-end. Go to yourdomain.com/login to login and start happy coding! 
-Good luck!
-
-Bob Mulder
-
-The CakeManager-Team
+Furthur Reading
+---------------
