@@ -3,8 +3,6 @@ Quick Start
 
 The best way to experience and learn CakeManager is to sit down and build something. To start off we’ll build a simple bookmarking application, just like you did as first tutorial at [CakePHP](http://book.cakephp.org/3.0/en/quickstart.html).
 
-Beginner Tutorial
-===================
 In this tutorial we will add our CakeManager. So, that means we will have our login-system, and will be able to use extra plugins to make our work easier. We asume you already did the [QuikStart-tutorial from CakePHP](http://book.cakephp.org/3.0/en/quickstart.html).
 
 Getting the CakeManager
@@ -17,7 +15,6 @@ After that we need to load our plugin in our `config/bootstrap.php`. We also nee
 
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true, 'autoload' => true]);
     Plugin::load('Migrations');
-
 
 
 Creating the tables
