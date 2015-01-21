@@ -17,7 +17,7 @@ We asume you already got a new project of CakePHP. You can call the plugin via c
 
 After that we need to load our plugin in our config/bootstrap.php. We also need the Migrations-plugin from CakePHP to load our tables.
 
-    Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true, 'autoload' => true]);
+    Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
     Plugin::load('Migrations');
     Plugin::load('Crud');
 
