@@ -1,6 +1,8 @@
 Installation
 ============
 
+This section gives a brief description how to install the CakeManager and it's requirements
+
 Requirements
 ------------
 
