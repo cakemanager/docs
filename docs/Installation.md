@@ -6,7 +6,7 @@ Requirements
 
 You need to install a fresh copy of CakePHP 3.x. Read the [Quick Start](http://book.cakephp.org/3.0/en/quickstart.html) for more info.
 
-You also need the [Migrations[(https://github.com/cakephp/migrations) plugin from CakePHP itself. We already required it via the CakeManagers `composer.json`.
+You also need the [Migrations](https://github.com/cakephp/migrations) plugin from CakePHP itself. We already required it via the CakeManagers `composer.json`.
 
 Installing CakeManager
 ----------------------
