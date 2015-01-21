@@ -23,6 +23,45 @@ After that we need to load our plugin in our config/bootstrap.php. We also need 
     Plugin::load('Migrations');
     Plugin::load('Crud');
 
+Creating the tables
+--------------------
+Schema's we know from CakePHP 2.x are not supported anymore. But we got the migrations-plugin from [CakePHP](https://github.com/cakephp/migrations).
+
+Run the following command in your shell:
+
+    $ bin/cake migrations migrate -p CakeManager
+    
+This command tells the Migrations-plugin to migrate (install) the CakeManager. This will load our tables.
+
+Loading the roles and user
+-----------------
+We created a shell to load the default roles and adding an administrator. You can access the shell via:
+
+    $ bin/cake CakeManager.Init [command] [variables]
+
+### Adding the roles
+First we will add the roles:
+
+    $ bin/cake CakeManager.Init Roles
+    
+This command creates the default roles of the CakeManager:
+- Administrators
+- Moderators
+- Users
+- Unregistered
+
+### Adding an user
+Now we need a administrator to login. Use the folling to register yourself:
+
+    $ bin/cake CakeManager.Init Admin my_email@domain.com mypassword
+    
+- The first parameter is your e-mailaddress to login with.
+- The second parameter is your (unhashed) password.
+
+> Note: Submit a valid e-mailaddress, otherwise you won't be able to login (the validation requires an e-mailaddress)
+
+> Note: If you get an error, the address already exists
+
 Adding the component
 ----------
 
