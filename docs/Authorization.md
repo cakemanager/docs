@@ -32,7 +32,8 @@ We use as default the `ControllerAuthorize` from Cake itself. That means authori
 Role-Definitions
 ----------------
 
-There are 4 default role-definitions:
+What the hell are Role-Definitions? Well look... We are planning some great plugins, and our goal is to make as easy as possible for you. So, when you have a big plugin and you need to do some stuff with multiple roles, we need to easily get default roles! Thats why you register your 'database'-roles. You can create as many as you want. But, there are 4 default Role-Definitions.
+
 - Administrators
 - Moderators
 - Users
@@ -47,8 +48,8 @@ CakeManager has the following configuration:
         'Unregistered' => [4],
     ];
     
-Remember CM automatically creates roles in your database? Here they are asigned to a role-definition of the CakeManager.
-The CakeManager uses this role-definition to allow multiple roles (db) to a single role (app). Look at this examples:
+Remember CM automatically creates roles in your database? Here they are asigned to a Role-Definition of the CakeManager.
+The CakeManager uses this Role-Definition to allow multiple roles (db) to a single role (app). Look at this examples:
 
 ### Adding Roles to the Role-Definition
 
@@ -59,7 +60,7 @@ Now, the Moderators (id = 2) are added to the Administrator-definition.
 
 ### Checking Role-Definitions
 
-You can check if a user is allowed to a role-definition by the preset methods in the Manager-Component:
+You can check if a user is allowed to a Role-Definition by the preset methods in the Manager-Component:
 
     $this->Manager->isAdmin($user);
 
