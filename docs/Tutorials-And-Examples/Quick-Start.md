@@ -136,3 +136,14 @@ Then we call this method in our `beforeFilter`-callback.
 
 Furthur Reading
 ---------------
+
+We have showed you what kind of tools are available, but we don't have result yet... The plugin [PostTypes](https://github.com/cakemanager/cakephp-posttypes) is useful to let our 'Bookmark' being a PostType! Read more about it at [the documentation](http://posttypes.readthedocs.org/en/develop/).
+
+### Tutorials
+
+* [Authorization Tutorial](Authorization.md) - This tutorial explains how to handle authorization quickely.
+
+### Some suggestions
+
+* Under 'Components' you can find many useful components like [Menu](../Components/Menu.md), or [IsAuthorized](../Components/IsAuthorized.md).
+* Under 'Behaviors' you can find many useful behaviors like [WhoDidIt](../Behaviors/WhoDidIt.md), or [IsAuthorized](../Behaviors/IsAuthorized.md).
