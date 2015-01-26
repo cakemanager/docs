@@ -44,4 +44,17 @@ Some examples:
         $entity->customfield = "My Value";
         
 
-        
+Tips and Tricks
+---------------
+
+### For Api
+
+If you use metafields for api's, you see the getters didn't work. This is because it works like [Virtual Fields](http://book.cakephp.org/3.0/en/orm/entities.html#exposing-virtual-properties).
+
+By adding the fiels to the `$_virtual`-array they will be loaded with your entity:
+
+      protected $_virtual = ['customfield'];
+      
+You can also add virtual fields at runtime:
+
+      $entity->virtualProperties(['customfield']);
