@@ -24,7 +24,7 @@ To do that you have to add `getters` and `setters` in your `Entity`.
             $model = TableRegistry::get('Bookmarks');
             return $model->registerGetter($this, 'customfield');
         }
-    
+      
         protected function _setCustomfield($value) {
             $model = TableRegistry::get('Bookmarks');
             $this->metas = $model->registerSetter($this, 'customfield', $value);
@@ -58,3 +58,39 @@ By adding the fiels to the `$_virtual`-array they will be loaded with your entit
 You can also add virtual fields at runtime:
 
       $entity->virtualProperties(['customfield']);
+
+### Traits
+
+If you're building a plugin and want to let the user decide to use meta-keys for his entity you can use traits.
+
+Example:
+
+      // Customfield/Model/Entity/CustomfieldTrait.php
+      
+      namespace Customfield\Model\Entity;
+      
+      trait CustomfieldTrait {
+      
+        protected function _getCustomfield() {
+            $model = TableRegistry::get('Bookmarks');
+            return $model->registerGetter($this, 'customfield');
+        }
+      
+        protected function _setCustomfield($value) {
+            $model = TableRegistry::get('Bookmarks');
+            $this->metas = $model->registerSetter($this, 'customfield', $value);
+        }
+      
+      }
+      
+Now we've created the trait, we are able to `use` the trait.
+
+      namespace App\Model\Entity;
+      
+      use Cake\ORM\Entity;
+      use Customfield\Model\Entity\CustomfieldTrait;
+      
+      class Article extends Entity
+      {
+          use CustomfieldTrait;
+      }
