@@ -14,7 +14,7 @@ Wanna read more? Read the 'Install'-page to see how easy the plugin works!
 
 Get the code
 ------------
-The [source (http://github.com/bobmulder/cakephp-cakemanager)](http://github.com/bobmulder/cakephp-cakemanager) is available on Github.
+The [source (http://github.com/cakemanager/cakephp-cakemanager)](http://github.com/cakemanager/cakephp-cakemanager) is available on Github.
 
 Branches
 --------
