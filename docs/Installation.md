@@ -37,35 +37,41 @@ Loading the roles and user
 -----------------
 We created a shell to load the default roles and adding an administrator. You can access the shell via:
 
-    $ bin/cake CakeManager.Init [command] [variables]
+    $ bin/cake manager [subcommand] [-h] [-v] [-q]
 
-### Adding the roles
-First we will add the roles:
+The CakeManager has the following subcommands:
 
-    $ bin/cake CakeManager.Init Roles
+**initialize**  
+Execute The Initialize-method. This will add some important data to your database.
+
+**user**        
+Execute The User-task. You will be able to create an user.
+
+### Initialize
+First we will add the roles via the `initialize` subcommand:
+
+    $ bin/cake manager initialize roles
     
 This command creates the default roles of the CakeManager:
+
 - Administrators
 - Moderators
 - Users
 - Unregistered
 
-### Adding an user
+### User
 Now we need a administrator to login. Use the folling to register yourself:
 
-    $ bin/cake CakeManager.Init Admin my_email@domain.com mypassword
+    $ bin/cake manager user
     
-- The first parameter is your e-mailaddress to login with.
-- The second parameter is your (unhashed) password.
+Now the shell will ask you for your e-mailaddress and password
 
-> Note: Submit a valid e-mailaddress, otherwise you won't be able to login (the validation requires an e-mailaddress)
-
-> Note: If you get an error, the address already exists
+> Note: The password is not hidden!
 
 Adding the component
 ----------
 
-After loading the plugin we have to load the base-component: `CakeManager.Manager`.
+After loading the plugin we have to load the base-component `CakeManager.Manager`.
 
     public function initialize() {
         
