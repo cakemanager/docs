@@ -98,7 +98,7 @@ Further reading
 
 You just started with the CakeManager.
 
-Here are some suggestions related to this tutorial:
+Here are some suggestions related to this section:
 
 - CakePHP's [Quick Start](http://book.cakephp.org/3.0/en/quickstart.html) for 3.x.
 - Read the [Manager Component](Components/Manager.md) for detailed documentation about the Manager-component.
