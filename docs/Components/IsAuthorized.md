@@ -46,8 +46,15 @@ $this->IsAuthorized->config('param', 1);
 Activating the authorization
 ----------------------------
 
-Ofcourse you want to activate the authorization. For that, you need to customize the `Controller:isAuthorized()`-method.
-`
+Ofcourse you want to activate the authorization. You can use the method:
+
+```php
+     $this->IsAuthorized->authorize();
+```
+
+If this authorization is the only thing you got you can use the following in your `AppController`:
+
+
 ```php
 public function isAuthorized($user) {
 
