@@ -8,19 +8,22 @@ Requirements
 
 You need to install a fresh copy of CakePHP 3.x. Read the [Quick Start](http://book.cakephp.org/3.0/en/quickstart.html) for more info.
 
-You also need the [Migrations](https://github.com/cakephp/migrations) plugin from CakePHP itself. We asume it's autoloaded by CakePHP itself.
+You also need the [Migrations](https://github.com/cakephp/migrations) plugin from CakePHP itself. We asume it's autoloaded by CakePHP itself. The Crud-plugin is required by the CakeManager.
 
-Installing CakeManager
-----------------------
-
+Getting the CakeManager
+-----------------------
 We asume you already got a new project of CakePHP. You can call the plugin via composer:
 
-    "cakemanager/cakephp-cakemanager": "dev-master"
+    "require": {
+        "cakemanager/cakephp-cakemanager": "dev-master"
+    }
 
-After that we need to load our plugin in our config/bootstrap.php. We also need the Migrations-plugin from CakePHP to load our tables. Also the [Crud-Plugin](https://github.com/FriendsOfCake/crud/tree/cake3) is required by the CakeManager.
+After that we need to load our plugin in our `config/bootstrap.php`.
 
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
+     
     Plugin::load('Crud');
+
 
 Creating the tables
 --------------------
