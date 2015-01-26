@@ -22,9 +22,9 @@ After that we need to load our plugin in our `config/bootstrap.php`.
 
 Creating the tables
 --------------------
-Schema's we know from CakePHP 2.x are not supported anymore. But we got the migrations-plugin from [CakePHP](https://github.com/cakephp/migrations).
+Schema's we know from CakePHP 2.x are not supported anymore. But we got the migrations-plugin from [CakePHP](https://github.com/cakephp/migrations). 
 
-Run the following command in your shell:
+Run the following command in your shell to automatically generate the `users`- `roles`- and `metas`-table:
 
     $ bin/cake migrations migrate -p CakeManager
     
@@ -32,7 +32,7 @@ This command tells the Migrations-plugin to migrate (install) the CakeManager. T
 
 Loading the roles and user
 -----------------
-We created a shell to load the default roles and adding an administrator. You can access the shell via:
+We created a shell to load the default roles and adding an user. You can access the shell via:
 
     $ bin/cake manager [subcommand] [-h] [-v] [-q]
 
@@ -68,13 +68,13 @@ Now the shell will ask you for your e-mailaddress and password
 Adding the component
 --------------------
 
-After loading the plugin we have to load the base-component: CakeManager.Manager.
+After loading the plugin we have to load the base-components in your `AppControllers` `initialize`:
 
         public function initialize() {
         
             // code
         
-            $this->loadComponent('CakeManager.Manager');
+            $this->loadComponent('CakeManager.Manager'); // the manager
             
             $this->loadComponent('CakeManager.Authorizer'); // must have for your authorization
             $this->loadComponent('CakeManager.IsAuthorized'); // should have for your authorization
@@ -83,10 +83,7 @@ After loading the plugin we have to load the base-component: CakeManager.Manager
         
         }
 
-### Configuring the Manager
-
-There are multiple configurations for the manager-component. 
-See the [Manager Component](../Components/Manager.md) for detailed documentation about the Manager-component.
+> Note: Further reading: [Manager-Component](../Components/Manager.md).
 
 ### Adding isAuthorized-method
 
@@ -113,11 +110,16 @@ If you reload your web-page you will probably get an error. Because we chose tha
         
     }
 
+> Note: Further reading: [IsAuthorized-Example](Authorization.md).
+
 Adding menu-items
 -----------------
 
-The admin-section uses the area 'main' for the default menu. Let's add an menu-item.
-At first we create a new method in our `AppController` to store menu-items.
+Via the CakeManager you are able to register menu-items per sections. 
+
+An example: the admin-area uses the `main` section for menu-items (sidebar). We want to add our items to the menu-list
+
+First we gonna create a method called `adminMenuItems()`:
 
     public function adminMenuItems() {
                     
@@ -132,18 +134,25 @@ At first we create a new method in our `AppController` to store menu-items.
         
     }
     
-Then we call this method in our `beforeFilter`-callback.
+This is how we add a menu to our list.    
+Then we call this method in our `beforeFilter`-callback. We have to be sure the prefix is `admin`.
 
     public function beforeFilter($event) {
         parent::beforeFilter($event);
         
-        $this->adminMenuItems();
+        if($this->Controller->request->params['prefix'] == 'admin') {
+            $this->adminMenuItems();
+        }
     }
+
+Now you added your first item to the menu-list for the admin-area.
+
+> Note: Further reading: [Menus](../Components/Menu.md).
 
 Furthur Reading
 ---------------
 
-We have showed you what kind of tools are available, but we don't have result yet... The plugin [PostTypes](https://github.com/cakemanager/cakephp-posttypes) is useful to let our 'Bookmark' being a PostType! Read more about it at [the documentation](http://posttypes.readthedocs.org/en/develop/).
+We have showed you what kind of tools are available... But there's much more available. The plugin [PostTypes](https://github.com/cakemanager/cakephp-posttypes) is useful to let our 'Bookmark' being a PostType. Read more about it at [the documentation](http://posttypes.readthedocs.org/en/develop/).
 
 ### Tutorials
 
