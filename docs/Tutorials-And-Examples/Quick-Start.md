@@ -9,11 +9,14 @@ Getting the CakeManager
 -----------------------
 We asume you already got a new project of CakePHP. You can call the plugin via composer:
 
-    "cakemanager/cakephp-cakemanager": "dev-master"
+    "require": {
+        "cakemanager/cakephp-cakemanager": "dev-master"
+    }
 
 After that we need to load our plugin in our `config/bootstrap.php`.
 
-    Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true, 'autoload' => true]);
+    Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
+     
     Plugin::load('Crud');
 
 
