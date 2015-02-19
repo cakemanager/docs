@@ -8,7 +8,7 @@ Loading
 -------
 You can load the behavior in your model via:
 
-    $this->loadBehavior('CakeManager.Stateable', []);
+    $this->addBehavior('CakeManager.Stateable', []);
 
 
 Configurations
