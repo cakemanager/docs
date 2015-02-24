@@ -1,10 +1,12 @@
-Callbacks
+Events and Callbacks
 =========
 
 The CakeManager registers multiple callbacks. This is helpfull to make your app flexible.
 Plugins are able to do stuff automatically, and you are able to keep your code clean.
 
-All callbacks will be documented in this section
+All callbacks will be documented in this section.
+
+To get a clear view about the request-flow, read [this section: Request Flow](Request-Flow.md).
 
 Components
 ==========
