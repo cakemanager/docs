@@ -1,7 +1,7 @@
 Authorizer-Component
 ====================
 
-The AuthorizerComponent allows us to create easy authorization. You have to be familiar with the ControllerAuthorization from CakePHP. For more info see [The CookBook](http://book.cakephp.org/3.0/en/controllers/components/authentication.html#authorization)
+The `AuthorizerComponent` allows us to create easy authorization. You have to be familiar with the ControllerAuthorization from CakePHP. For more info see [The CookBook](http://book.cakephp.org/3.0/en/controllers/components/authentication.html#authorization)
 
 This Component is role-based. You are not able (yet) to add specific auth-rules per user. (Except if you use the `setRole`-method.
 
