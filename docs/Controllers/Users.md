@@ -64,5 +64,3 @@ If you want to use your own views and actions, you are free to go. These actions
 That means that you are able to use the login-action (from CM) only for it's POST, and use your own action for the view.
 Remember that you have to set the action-attribute of your login-form to the login-action of the CakeManager.
 The same is applied to the other actions.
-
-
