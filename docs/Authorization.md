@@ -15,11 +15,11 @@ AuthComponent
 When you load the `ManagerComponent` in your `AppController`, it will automatically load the `AuthComponent` with default settings.
 You can change the settings via:
 
-    $this->Manager->config('components.Auth', *settings*);
+    $this->Manager->config('Auth', *settings*);
 
 If you want to disable the AuthComponent for loading it by yourself use:
 
-    $this->Manager->config('components.Auth', false);
+    $this->Manager->config('Auth', false);
 
 
 RoleBased Authorization
@@ -62,29 +62,15 @@ Now, the Moderators (id = 2) are added to the Administrator-definition.
 
 You can check if a user is allowed to a Role-Definition by the preset methods in the Manager-Component:
 
-    $this->Manager->isAdmin($user);
+    $this->Manager->isRoledefinition("Administrators", $user);
 
-This method will check if a user is allowed to the admin-section.
-
-    $this->Manager->isModerator($user);
-
-This method will check if a user is a moderator.
-
-    $this->Manager->isUser($user);
-
-This method will check if a user is a normal user.
-
-    $this->Manager->isUnregistered($user);
-
-This method will check if a user is a non-logged-in user.
-
-> Note: Unregistered User means a non-logged-in user. This role can be usefull with ACL.
+> Note: Unregistered User means a non-logged-in user. This role can be usefull with ACL to register unlogged users as unregistered-role.
 
 ### Using Role-Definitions
 
 Role-Definitons can be usefull when you use a big plugin who uses multiple roles. They will be able to use your definitions for your application. You can get definitions by the following.
 
     // getting the administrator-roles
-    Configure::write('CM.Roles.Administrators');
+    Configure::read('CM.Roles.Administrators');
     
 `Administrators` can be replaced by `Moderators`, `Users` and `Unregistered`.
