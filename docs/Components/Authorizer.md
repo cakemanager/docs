@@ -53,16 +53,8 @@ Using the `Authorizer` gives us many tools to define our authorization clear. Lo
               $auth->allowRole([1,2,3,4]);
           });
       
-          // The owner of an article can edit and delete it; except the admin (1)
-          $this->Authorizer->action(['edit', 'delete'], function($auth) {
-              // This is the IsAuthorized-Component from the CakeManager
-              $auth->setRole([2,3,4], $this->IsAuthorized->authorize()); 
-          });
-          
           return $this->Authorizer->authorize();
       }
-
-We combined this piece of code with the `IsAuthorized`-Component for autmatically checking if a Entity belongs to the logged in user.
 
 Let's walk trough the code...
 
@@ -114,7 +106,7 @@ With the `setRole`-method you are able to depent your role-rule on your own meth
 
           // Using the IsAuthorized-Component from the CakeManager
           $this->Authorizer->action(['add'], function($auth) {
-              $auth->setRole([1,2,3,4], $this->IsAuthorized->authorize());
+              $auth->setRole([1,2,3,4], $this->Model->isOwnedBy($this->authUser['id]));
           });
           
           // Using your own method
@@ -135,7 +127,5 @@ This is the final method of the component. This method checks if the current use
         
 Further reading
 ---------------
-
-Read more about the [IsAuthorized-Component](IsAuthorized.md).
 
 You can follow a quick tutorial [here](../Tutorials-And-Examples/Authorization.md);
