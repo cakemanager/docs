@@ -1,6 +1,8 @@
 Metas-Behavior
 ==================
 
+> Warning: This behavior is still in development and not stable!
+
 The Metas-Behavior can be used to add custom meta-data to your entities without creating an extra column. 
 This can be useful when you build things that are extendable (like plugins).
 

@@ -75,42 +75,13 @@ After loading the plugin we have to load the base-components in your `AppControl
             // code
         
             $this->loadComponent('CakeManager.Manager'); // the manager
-            
             $this->loadComponent('CakeManager.Authorizer'); // must have for your authorization
-            $this->loadComponent('CakeManager.IsAuthorized'); // should have for your authorization
         
             // code
         
         }
 
 > Note: Further reading: [Manager-Component](../Components/Manager.md).
-
-### Adding isAuthorized-method
-
-If you reload your web-page you will probably get an error. Because we chose that the controller has to authorize, our `AppController` needs an `isAuthorized()`-method. Create the following method in your `BookMarksController`.
-
-    public function isAuthorized($user) {
-        
-        // allows adminstrators (1) to all actions (*)
-        $this->Authorizer->action(['*'], function($auth) {
-            $auth->allowRole([1]);
-        });
-        
-        // Moderators (2) can only view, edit and delete their own bookmarks
-        $this->Authorizer->action(['edit', 'delete'], function($auth) {
-            $auth->setRole([2], $this->IsAuthorized->authorize());
-        });
-            
-        // Moderators (2) are ALSO able to add bookmarks
-        $this->Authorizer->action(['add'], function($auth) {
-            $auth->allowRole([2]);
-        });
-        
-        return $this->Authorizer->authorize();
-        
-    }
-
-> Note: Further reading: [IsAuthorized-Example](Authorization.md).
 
 Adding menu-items
 -----------------
@@ -160,5 +131,5 @@ We have showed you what kind of tools are available... But there's much more ava
 
 ### Some suggestions
 
-* Under 'Components' you can find many useful components like [Menu](../Components/Menu.md), or [IsAuthorized](../Components/IsAuthorized.md).
-* Under 'Behaviors' you can find many useful behaviors like [WhoDidIt](../Behaviors/WhoDidIt.md), or [IsAuthorized](../Behaviors/IsAuthorized.md).
+* Under 'Components' you can find many useful components like [Menu](../Components/Menu.md)
+* Under 'Behaviors' you can find many useful behaviors like [WhoDidIt](../Behaviors/WhoDidIt.md)

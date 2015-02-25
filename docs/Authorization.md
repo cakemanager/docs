@@ -15,11 +15,11 @@ AuthComponent
 When you load the `ManagerComponent` in your `AppController`, it will automatically load the `AuthComponent` with default settings.
 You can change the settings via:
 
-    $this->Manager->config('components.Auth', *settings*);
+    $this->Manager->config('Auth', *settings*);
 
 If you want to disable the AuthComponent for loading it by yourself use:
 
-    $this->Manager->config('components.Auth', false);
+    $this->Manager->config('Auth', false);
 
 
 RoleBased Authorization
@@ -32,14 +32,25 @@ We use as default the `ControllerAuthorize` from Cake itself. That means authori
 Role-Definitions
 ----------------
 
-What the hell are Role-Definitions? Well look... We are planning some great plugins, and our goal is to make as easy as possible for you. So, when you have a big plugin and you need to do some stuff with multiple roles, we need to easily get default roles! Thats why you register your 'database'-roles. You can create as many as you want. But, there are 4 default Role-Definitions.
+What are role-definitions? Well look... The CakeManager has 4 default roles:
+
+- Administrators
+- Moderators
+- Users
+- Unregisterd (will be helpfull with acl)
+
+It's helpfull to use these roles for your application, but what if we talk about flexibility? Maybe you need some extra roles, but external plugins won't be able to recognize them. Thats why we use role-definitions. They are equal to the default roles of the CakeManager, but you are able to assign your own roles to the role-definitions. Long talk, but look at this example.
+
+### Example
+
+This are the 4 registered role-definitions:
 
 - Administrators
 - Moderators
 - Users
 - Unregistered
 
-CakeManager has the following configuration:
+The roles of the CakeManager are defined this way:
 
     'CM.Roles' => [
         'Administrators' => [1],
@@ -48,43 +59,37 @@ CakeManager has the following configuration:
         'Unregistered' => [4],
     ];
     
-Remember CM automatically creates roles in your database? Here they are asigned to a Role-Definition of the CakeManager.
-The CakeManager uses this Role-Definition to allow multiple roles (db) to a single role (app). Look at this examples:
+But what if we want some new roles:
 
-### Adding Roles to the Role-Definition
+- Teacher (id: 5)
+- Student (id: 6)
 
-    If you want to allow Moderators to the admin-section;
-    Configure::write('CM.Roles.Administrators', [1, 2]);
+We can add these roles to the role-definition 'Users'.
+
+    Configure::write('CM.Roles.Users', [5,6])
     
-Now, the Moderators (id = 2) are added to the Administrator-definition. 
+Now Teacher and Student are added to the role-definition of Users.
 
 ### Checking Role-Definitions
 
 You can check if a user is allowed to a Role-Definition by the preset methods in the Manager-Component:
 
-    $this->Manager->isAdmin($user);
+    $this->Manager->isRoledefinition("Administrators", $user);
 
-This method will check if a user is allowed to the admin-section.
-
-    $this->Manager->isModerator($user);
-
-This method will check if a user is a moderator.
-
-    $this->Manager->isUser($user);
-
-This method will check if a user is a normal user.
-
-    $this->Manager->isUnregistered($user);
-
-This method will check if a user is a non-logged-in user.
-
-> Note: Unregistered User means a non-logged-in user. This role can be usefull with ACL.
 
 ### Using Role-Definitions
 
 Role-Definitons can be usefull when you use a big plugin who uses multiple roles. They will be able to use your definitions for your application. You can get definitions by the following.
 
     // getting the administrator-roles
-    Configure::write('CM.Roles.Administrators');
+    Configure::read('CM.Roles.Administrators');
+            
+    // getting the moderator-roles
+    Configure::read('CM.Roles.Moderators');
+        
+    // getting the users-roles
+    Configure::read('CM.Roles.Users');
+                
+    // getting the unregistered-roles
+    Configure::read('CM.Roles.Unregistered');
     
-`Administrators` can be replaced by `Moderators`, `Users` and `Unregistered`.

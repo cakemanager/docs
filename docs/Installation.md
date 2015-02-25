@@ -82,7 +82,6 @@ After loading the plugin we have to load the base-component `CakeManager.Manager
         
         $this->loadComponent('CakeManager.Manager');
         $this->loadComponent('CakeManager.Authorizer'); // must have for your authorization
-        $this->loadComponent('CakeManager.IsAuthorized'); // should have for your authorization
            
         // code
         
