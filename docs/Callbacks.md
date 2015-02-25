@@ -1,4 +1,4 @@
-Events and Callbacks
+Events and Callbacks 
 =========
 
 The CakeManager registers multiple callbacks. This is helpfull to make your app flexible.
