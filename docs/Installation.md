@@ -41,14 +41,10 @@ This command tells the Migrations-plugin to migrate (install) the CakeManager. T
 
 Loading the roles and user
 -----------------
-We created a shell to load the default roles and adding an administrator. You can access the shell via:
-
-    $ bin/cake manager [subcommand] [-h] [-v] [-q]
-
-The CakeManager has the following subcommands:
+We created a shell to load the default roles and adding an administrator. The CakeManager has the following subcommands:
 
 **initialize**  
-Execute The Initialize-method. This will add some important data to your database.
+Execute The Initialize-method. This will add some important data to your database (like roles).
 
 **user**        
 Execute The User-task. You will be able to create an user.
