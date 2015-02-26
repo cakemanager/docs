@@ -118,7 +118,7 @@ Then we call this method in our `beforeFilter`-callback. We have to be sure the 
 
 Now you added your first item to the menu-list for the admin-area.
 
-> Note: Further reading: [Menus](../Components/Menu.md).
+> Note: Further reading: [Menus [Utils-plugin]](http://cakemanager-utils.readthedocs.org/en/develop/components/menu).
 
 Furthur Reading
 ---------------
@@ -131,5 +131,3 @@ We have showed you what kind of tools are available... But there's much more ava
 
 ### Some suggestions
 
-* Under 'Components' you can find many useful components like [Menu](../Components/Menu.md)
-* Under 'Behaviors' you can find many useful behaviors like [WhoDidIt](../Behaviors/WhoDidIt.md)
