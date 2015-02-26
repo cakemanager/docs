@@ -21,9 +21,6 @@ We asume you already got a new project of CakePHP. You can call the plugin via c
 After that we need to load our plugin in our `config/bootstrap.php`.
 
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
-     
-    Plugin::load('Crud');
-
 
 Creating the tables
 --------------------
@@ -81,7 +78,7 @@ After loading the plugin we have to load the base-component `CakeManager.Manager
         // code
         
         $this->loadComponent('CakeManager.Manager');
-        $this->loadComponent('CakeManager.Authorizer'); // must have for your authorization
+        $this->loadComponent('Utils.Authorizer'); // must have for your authorization
            
         // code
         
@@ -103,3 +100,4 @@ Here are some suggestions related to this section:
 - Read the [Manager Component](Components/Manager.md) for detailed documentation about the Manager-component.
 - Read the [Request Flow](Request-Flow.md) for detailed documentation about callbacks and events via the CakeManager.
 - Read the [Configurations](Configurations.md) for detailed documentation about the available configurations of the plugin.
+- Read the [Utils Docs](http://cakemanager-utils.readthedocs.org/en/latest) for documentation about all components and behaviors.
