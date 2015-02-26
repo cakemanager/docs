@@ -12,7 +12,12 @@ You also need the [Migrations](https://github.com/cakephp/migrations) plugin fro
 
 Getting the CakeManager
 -----------------------
-We asume you already got a new project of CakePHP. You can call the plugin via composer:
+
+Using the inline require for composer:
+
+    composer require cakemanager/cakephp-cakemanager:dev-master
+
+Or add this to your composer.json configuration:
 
     "require": {
         "cakemanager/cakephp-cakemanager": "dev-master"
@@ -20,6 +25,7 @@ We asume you already got a new project of CakePHP. You can call the plugin via c
 
 After that we need to load our plugin in our `config/bootstrap.php`.
 
+    Plugin::load('Utils', ['bootstrap' => true, 'routes' => true]);
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
 
 Creating the tables
