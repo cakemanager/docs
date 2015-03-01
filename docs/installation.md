@@ -89,7 +89,7 @@ After loading the plugin we have to load the base-component `CakeManager.Manager
 ### Configuring the Manager
 
 There are multiple configurations for the manager-component.
-See the [Manager Component](Components/Manager.md) for detailed documentation about the Manager-component.
+See the [Manager Component](components/manager.md) for detailed documentation about the Manager-component.
 
 Further reading
 -------
@@ -99,7 +99,7 @@ You just started with the CakeManager.
 Here are some suggestions related to this section:
 
 - CakePHP's [Quick Start](http://book.cakephp.org/3.0/en/quickstart.html) for 3.x.
-- Read the [Manager Component](Components/Manager.md) for detailed documentation about the Manager-component.
-- Read the [Request Flow](Request-Flow.md) for detailed documentation about callbacks and events via the CakeManager.
-- Read the [Configurations](Configurations.md) for detailed documentation about the available configurations of the plugin.
+- Read the [Manager Component](components/manager.md) for detailed documentation about the Manager-component.
+- Read the [Request Flow](request-flow.md) for detailed documentation about callbacks and events via the CakeManager.
+- Read the [Configurations](configurations.md) for detailed documentation about the available configurations of the plugin.
 - Read the [Utils Docs](http://cakemanager-utils.readthedocs.org/en/latest) for documentation about all components and behaviors.
