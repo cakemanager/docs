@@ -22,14 +22,6 @@ Branches
 
 **develop** will be used to develop. Warning; this branche may contain non-stable code.
 
-Table Of Contents
------------------
-
-* [Installation](Installation.md)
-* [Configurations](Configurations.md)
-* [Authorization](Authorization.md)
-* NOT COMPLETE YET
-
 To Do
 -----
 - Write documentation
