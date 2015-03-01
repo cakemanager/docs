@@ -6,7 +6,7 @@ Plugins are able to do stuff automatically, and you are able to keep your code c
 
 All callbacks will be documented in this section.
 
-To get a clear view about the request-flow, read [this section: Request Flow](Request-Flow.md).
+To get a clear view about the request-flow, read [this section: Request Flow](request-flow.md).
 
 Components
 ==========
