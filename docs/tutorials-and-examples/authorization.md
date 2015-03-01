@@ -51,7 +51,7 @@ Thats it! Hopefully the comments explain it's code. For more info you can read t
 Further Reading
 ---------------
 
-If you want to know more about the authorization of the CakeManager, read the [Authorization Section](../Authorization.md).
+If you want to know more about the authorization of the CakeManager, read the [Authorization Section](../authorization.md).
 
 Components used in this section:
 
