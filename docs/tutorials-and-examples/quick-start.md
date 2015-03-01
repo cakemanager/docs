@@ -76,7 +76,8 @@ We are almost ready to login in our system. First we have to load some important
         
         }
 
-> Note: Further reading: [ManagerComponent](../Components/Manager.md).
+> Note: Further reading: [ManagerComponent](../components/manager.md).
+
 > Note: Documentation about the [Utils plugin](http://cakemanager-utils.readthedocs.org).
 
 What's next
@@ -120,7 +121,7 @@ Good luck with programming! And don't forget to have fun ;).
 
 ### Tutorials
 
-- [Authorization Tutorial](Authorization.md) - This tutorial explains how to handle authorization quickely.
+- [Authorization Tutorial](authorization.md) - This tutorial explains how to handle authorization quickely.
 
 ### Some suggestions
 
