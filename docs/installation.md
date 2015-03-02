@@ -6,18 +6,11 @@ This section gives a brief description how to install the CakeManager and it's r
 Requirements
 ------------
 
-You need to install a fresh copy of CakePHP 3.x. Read the [Quick Start](http://book.cakephp.org/3.0/en/quickstart.html) for more info.
-
-You also need the [Migrations](https://github.com/cakephp/migrations) plugin from CakePHP itself. We asume it's autoloaded by CakePHP itself. The Crud-plugin is required by the CakeManager.
+- A fresh copy of CakePHP 3.x
+- Composer
 
 Getting the CakeManager
 -----------------------
-
-Using the inline require for composer:
-
-    composer require cakemanager/cakephp-cakemanager:dev-master
-
-Or add this to your composer.json configuration:
 
     "require": {
         "cakemanager/cakephp-cakemanager": "dev-master"
@@ -25,15 +18,15 @@ Or add this to your composer.json configuration:
 
 After that we need to load our plugin in our `config/bootstrap.php`.
 
-    Plugin::load('Utils', ['bootstrap' => true, 'routes' => true]);
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
+        
+    Plugin::load('Utils');
+        
+    Plugin::load('Crud');
+
 
 Creating the tables
 --------------------
-
-Schema's we know from CakePHP 2.x are not supported anymore. But we got the migrations-plugin from [CakePHP](https://github.com/cakephp/migrations).
-
-Run the following command in your shell:
 
     $ bin/cake migrations migrate -p CakeManager
     
@@ -41,16 +34,7 @@ This command tells the Migrations-plugin to migrate (install) the CakeManager. T
 
 Loading the roles and user
 -----------------
-We created a shell to load the default roles and adding an administrator. The CakeManager has the following subcommands:
-
-**initialize**  
-Execute The Initialize-method. This will add some important data to your database (like roles).
-
-**user**        
-Execute The User-task. You will be able to create an user.
-
-### Initialize
-First we will add the roles via the `initialize` subcommand:
+Run the following commands in your command prompt:
 
     $ bin/cake manager initialize roles
     
@@ -61,35 +45,31 @@ This command creates the default roles of the CakeManager:
 - Users
 - Unregistered
 
-### User
-Now we need a administrator to login. Use the folling to register yourself:
+Via this command you are able to create the first user:
 
     $ bin/cake manager user
     
-Now the shell will ask you for your e-mailaddress and password
 
-> Note: The password is not hidden!
+Adding the components
+--------------------
+You have to load the following components: 
 
-Adding the component
-----------
-
-After loading the plugin we have to load the base-component `CakeManager.Manager`.
-
-    public function initialize() {
+        public function initialize() {
         
-        // code
+            $this->loadComponent('CakeManager.Manager');    // the manager itself
+            $this->loadComponent('Utils.Authorizer');       // must have for your authorization
+            $this->loadComponent('Utils.Menu');             // must have for adding menu-items to your app (especially the admin-area)
         
-        $this->loadComponent('CakeManager.Manager');
-        $this->loadComponent('Utils.Authorizer'); // must have for your authorization
-           
-        // code
-        
-    }
+        }
 
-### Configuring the Manager
+> Note: Further reading: [ManagerComponent](../components/manager.md).
 
-There are multiple configurations for the manager-component.
-See the [Manager Component](components/manager.md) for detailed documentation about the Manager-component.
+> Note: Documentation about the [Utils plugin](http://cakemanager-utils.readthedocs.org).
+
+Done
+-----------
+
+Now you are able to login via `/login`. When you are logged in you are able to manage your users and roles. By extending your app with more plugins of [cakemanager](https://github.com/cakemanager) your menu-list will expand with many more features!
 
 Further reading
 -------
