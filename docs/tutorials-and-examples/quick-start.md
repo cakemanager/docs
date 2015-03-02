@@ -26,7 +26,7 @@ Creating the tables
 --------------------
 Schema's we know from CakePHP 2.x are not supported anymore. But we got the migrations-plugin from [CakePHP](https://github.com/cakephp/migrations). 
 
-Run the following command in your shell to automatically generate the `users`- `roles`- and `metas`-table:
+Run the following command in your shell to automatically generate the `users` and `roles`-table:
 
     $ bin/cake migrations migrate -p CakeManager
     
@@ -63,7 +63,7 @@ Now the shell will ask you for your e-mailaddress and password
 
 > Note: The password is not hidden!
 
-Adding the component
+Adding the components
 --------------------
  
 We are almost ready to login in our system. First we have to load some important components in your `AppControllers` `initialize`:
