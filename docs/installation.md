@@ -62,7 +62,7 @@ You have to load the following components:
         
         }
 
-> Note: Further reading: [ManagerComponent](../components/manager.md).
+> Note: Further reading: [ManagerComponent](components/manager.md).
 
 > Note: Documentation about the [Utils plugin](http://cakemanager-utils.readthedocs.org).
 
