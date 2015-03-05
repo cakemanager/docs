@@ -6,7 +6,7 @@ This repository contains the documentation for [the CakeManager](http://github.c
 Support
 -------
 
-For bugs about the documentation, please use the [issues](https://github.com/cakemanager/docs/issues) section of this repository.
+To get support about the documentation, please use the [issues](https://github.com/cakemanager/docs/issues) section of this repository.
 
 Contributing
 ------------
