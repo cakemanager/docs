@@ -55,10 +55,30 @@ Controllers
 
 There are no events registered for the controllers, but we will add some events soon!
 
+## Controller.Users.afterLogin
+
+This event is called after the user has been logged in succesfully.
+
+### Data
+- `user` - An array from the user who logged in
+
+## Controller.Users.afterInvalidLogin
+
+This event is called after the user could not login.
+
+### Data
+- `user` - An array from the user who tried to login.
+
+## Controller.Users.afterForgotPassword
+
+This event is called after the user requested a new password
+
+### Data
+- `user` - An array from the user who requested the new password
+
+
 To Do:
 
-- AfterLogin
-- AfterRequest
 - AfterActivate
-- AfterNewPassword
-- AfterRegister (first we have to make a register-functionality)
+- AfterResetPassword
+- AfterRegister (first we have to make a register-functionality :P)
