@@ -79,4 +79,4 @@ Available menu-areas: main and navbar
 Events and Callbacks
 --------------------
 
-The `ManagerComponent` registers many callbacks and events witch are documented on the [Callbacks-page](../Callbacks.md).
+The `ManagerComponent` registers many callbacks and events witch are documented on the [Callbacks-page](../callbacks.md).

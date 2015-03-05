@@ -6,7 +6,7 @@ We want to register our authorization easily. We gonna help you!
 Loading the Component
 ---------------------
 
-We've built the `AuthorizerComponent`. This component helps you defining authorization in your `isAuthorized()`-method. For more, read the [documentation](../Components/Authorizer.md).
+We've built the `AuthorizerComponent`. This component helps you defining authorization in your `isAuthorized()`-method. For more, read the [documentation [Utils plugin]](http://cakemanager-utils.readthedocs.org/en/develop/components/authorizer/).
 
 Load the component in your `AppController` by using:
 
@@ -46,16 +46,16 @@ Now we gonna define our authorization per controller. Lets take an example for '
         return $this->Authorizer->authorize();
     }
 
-Thats it! Hopefully the comments explain it's code. For more info you can read the [documentation](../Components/Authorizer.md) about the `AuthorizerComponent`.
+Thats it! Hopefully the comments explain it's code. For more info you can read the [documentation [Utils plugin]](http://cakemanager-utils.readthedocs.org/en/develop/components/authorizer/) about the `AuthorizerComponent`.
 
 Further Reading
 ---------------
 
-If you want to know more about the authorization of the CakeManager, read the [Authorization Section](../Authorization.md).
+If you want to know more about the authorization of the CakeManager, read the [Authorization Section](../authorization.md).
 
 Components used in this section:
 
-* [Authorizer](../Components/Authorizer.md) - Tool to make Authorization easier.
+* [Authorizer [Utils plugin]](http://cakemanager-utils.readthedocs.org/en/develop/components/authorizer/) - Tool to make Authorization easier.
 
 Behaviors used in this section:
 

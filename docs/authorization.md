@@ -25,7 +25,7 @@ If you want to disable the AuthComponent for loading it by yourself use:
 RoleBased Authorization
 -----------------------
 
-We use as default the `ControllerAuthorize` from Cake itself. That means authorization will be done by the controllers method `isAuthorized`. We have built a role-based helper-component for this way. [Check it out!](Components/Authorizer.md)
+We use as default the `ControllerAuthorize` from Cake itself. That means authorization will be done by the controllers method `isAuthorized`. We have built a role-based helper-component for this way. [Check it out!](http://cakemanager-utils.readthedocs.org/en/develop/components/authorizer/)
 
 > Note: The `isAuthorized`-method must exist, else an exception will raise.
 
