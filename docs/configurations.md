@@ -1,7 +1,7 @@
 Configurations
 ==============
 
-This page tells something about the available configurations (config/bootstrap.php).
+This page tells something about the available configurations you can use (config/bootstrap.php).
 
 Bootstrap
 ---------
