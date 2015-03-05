@@ -11,8 +11,8 @@ The following actions are available:
 
 - login
 - activate
-- request
-- new_password
+- forgot_password
+- reset_password
 - logout
 
 ### Login
@@ -31,12 +31,12 @@ That url will redirect to this activation-action. This action requires two value
 http://domain.org/user/activate/admin@cakemanager.org/8asdfnqSDzxmAKcn237KJHf
 ```
 
-### Request
+### Forgot Password
 
 The request-action is used to set a new `activation_key` for the user. The user has to input his e-mailaddress.
 When the key is set, he is still able to login, however, he will receive an email to set a new password.
 
-### New Password
+### Reset Password
 
 The new_password-action is used to let the user set a new password. 
 This action requires two values: `email` and `activation_id`. Example: 
@@ -57,10 +57,92 @@ Use the following to change it's redirect:
   $this->Auth->config('logoutRedirect', 'redirect_string_or_array');
 ```
 
-Customizing
------------
+Changing the views
+------------------
 
-If you want to use your own views and actions, you are free to go. These actions are also available for the logic. 
-That means that you are able to use the login-action (from CM) only for it's POST, and use your own action for the view.
-Remember that you have to set the action-attribute of your login-form to the login-action of the CakeManager.
-The same is applied to the other actions.
+The CakeManager is using it's own views for these actions. Ofcourse you are able to change them!
+In your `bootstrap.php` file you can change some configures for rendering other view-files
+
+Available view-files:
+
+- login
+- forgot_password
+- reset_password
+
+Let's show some examples:
+
+```
+  // changing all the views
+  Configure::write('CM.UserViews', [
+      'login'           => '/CustomUsers/login',
+      'forgot_password' => '/CustomUsers/forgot_password',
+      'reset_password'  => '/CustomUsers/reset_password',
+  ]);
+
+  // changing the login only
+  Configure::write('CM.UserViews.login', '/CustomUsers/login');
+
+```
+
+Now you have to create your view-files like `Templates/CustomUsers/login.ctp`. You can find the default view-files [here](https://github.com/cakemanager/cakephp-cakemanager/tree/master/src/Template/Users). Copy them to get a good base for your layout.
+
+Custom UsersController
+----------------------
+
+Maybe you want to use your own `UsersController`, so you are free to go! Here are some tips.
+
+### Controller
+
+First of all you need your own controller. To inherit the base-actions of the CakeManager, here's an example:
+
+```php
+    namespace App\Controller;
+  
+    use CakeManager\Controller\UsersController as CMUsersController;
+    
+    class UsersController extends CMUsersController
+    {
+    
+        public function beforeFilter(\Cake\Event\Event $event)
+        {
+            // set your own layout and theme
+            $this->layout = "guest";
+            $this->theme = "";
+    
+            // don't forget to load the parent's beforeFilter
+            parent::beforeFilter($event);
+    
+        }
+    
+        public function login()
+        {
+            // let's say you want to change some stuff here
+    
+            parent::login(); // loading the parents' login (CakeManager)
+            
+            // of course you are able to do stuff here too
+        }
+    
+        public function custom()
+        {
+            // this action is completely yours!
+        }    
+    
+    }
+```
+
+### Routing
+
+Now your controller is set, we need to let our routers know we have chosen another controller:
+
+    // in your config/routes.php
+    Router::connect('/users/:action/*', [
+        'plugin' => false,
+        'prefix' => false,
+        'controller' => 'Users',
+    ]);
+    
+This code tells the router to connect to your own controller (UsersController).
+
+
+
