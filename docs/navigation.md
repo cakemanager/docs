@@ -1,7 +1,7 @@
 - Components
-    - [Manager](/docs/?page=components/manager)
+    - [Manager](/docs/components/manager)
 - Controllers
-    - [UsersController](/docs/?page=controllers/users)
+    - [UsersController](/docscontrollers/users)
 - Tutorials and Examples
-    - [Quick Start](/docs/?page=tutorials-and-examples/quick-start)
-    - [Authorization](/docs/?page=tutorials-and-examples/authorization)
+    - [Quick Start](/docs/tutorials-and-examples/quick-start)
+    - [Authorization](/docs/tutorials-and-examples/authorization)
