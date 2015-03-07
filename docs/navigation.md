@@ -1,5 +1,3 @@
-Contents
---------
 
 - Components
     - [Manager](/docs/1.0/components/manager)
