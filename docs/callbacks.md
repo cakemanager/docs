@@ -51,8 +51,6 @@ Called after the component's `shutdown`-event, and before the action-render-meth
 Controllers
 ----------
 
-There are no events registered for the controllers, but we will add some events soon!
-
 ### Controller.Users.afterLogin
 
 This event is called after the user has been logged in succesfully.
