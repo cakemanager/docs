@@ -5,3 +5,5 @@
 - Tutorials and Examples
     - [Quick Start](/docs/tutorials-and-examples/quick-start)
     - [Authorization](/docs/tutorials-and-examples/authorization)
+- Core
+    - [Request Flow](/docs/request-flow)
