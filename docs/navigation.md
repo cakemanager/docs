@@ -10,8 +10,8 @@
     - [Quick Start](/docs/1.0/tutorials-and-examples/quick-start)
     - [Authorization](/docs/1.0/tutorials-and-examples/authorization)
 - General
-    - [Configurations](docs/1.0/configurations)
-    - [Authorization](docs/1.0/authorization)
+    - [Configurations](/docs/1.0/configurations)
+    - [Authorization](/docs/1.0/authorization)
     - [Request Flow](/docs/1.0/request-flow)
-    - [Callbacks and Events](docs/1.0/callbacks)
+    - [Callbacks and Events](/docs/1.0/callbacks)
 
