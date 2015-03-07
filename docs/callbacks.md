@@ -55,21 +55,21 @@ Controllers
 
 This event is called after the user has been logged in succesfully.
 
-#### Data
+**Data**
 - `user` - An array from the user who logged in
 
 ### Controller.Users.afterInvalidLogin
 
 This event is called after the user could not login.
 
-#### Data
+**Data**
 - `user` - An array from the user who tried to login.
 
 ### Controller.Users.afterForgotPassword
 
 This event is called after the user requested a new password
 
-#### Data
+**Data**
 - `user` - An array from the user who requested the new password
 
 
