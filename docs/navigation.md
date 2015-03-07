@@ -1,9 +1,9 @@
 - Components
-    - [Manager](/docs/components/manager)
+    - [Manager](/1.0/docs/components/manager)
 - Controllers
-    - [UsersController](/docscontrollers/users)
+    - [UsersController](/1.0/docs/controllers/users)
 - Tutorials and Examples
-    - [Quick Start](/docs/tutorials-and-examples/quick-start)
-    - [Authorization](/docs/tutorials-and-examples/authorization)
+    - [Quick Start](/1.0/docs/tutorials-and-examples/quick-start)
+    - [Authorization](/1.0/docs/tutorials-and-examples/authorization)
 - Core
-    - [Request Flow](/docs/request-flow)
+    - [Request Flow](/1.0/docs/request-flow)
