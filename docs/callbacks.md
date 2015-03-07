@@ -11,41 +11,41 @@ To get a clear view about the request-flow, read [this section: Request Flow](re
 Components
 ==========
 
-## Manager
+### Manager
 
-## Component.Manager.beforeFilter
+### Component.Manager.beforeFilter
 
 This event is requested before the original `beforeFilter`-event of the controller, but will be fired after the component's `beforeFilter`-event. This can be usefull to load components in your plugin before the user will need to use them. (Else you'll be too late loading it because the user needs it ;))
 
-## Component.Manager.beforeFilter.prefix
+### Component.Manager.beforeFilter.prefix
 
 `prefix` has to be replaced with the current prefix of the request.
 This event is requested after the default `Component.Manager.beforeFilter`-event.
 
-## Component.Manager.startup
+### Component.Manager.startup
 
 This event will be fired after the component's  `startup`-event, but before the actionlogic.
 
-## Component.Manager.startup.prefix
+### Component.Manager.startup.prefix
 
 `prefix` has to be replaced with the current prefix of the request.
 The same as above, but specified for prefixes. Can be usefull if you want to do something for admin only. This event will be fired after the normal `startup`-event.
 
-## Component.Manager.beforeRender
+### Component.Manager.beforeRender
 
 This event is called after the component's `beforeRender`-event, but before the controller's one.
 
-## Component.Manager.beforeRender.prefix
+### Component.Manager.beforeRender.prefix
 
 `prefix` has to be replaced with the current prefix of the request.
 This is the same as above, but specified for prefixes.
 This event is called after the `beforeRender` callback of the `ManagerComponent`.
 
-## Component.Manager.shutdown
+### Component.Manager.shutdown
 
 Called after the component's `shutdown`-event, and before the action-render-method from CakePHP itself.
 
-## Component.Manager.shutdown.prefix
+### Component.Manager.shutdown.prefix
 
 `prefix` has to be replaced with the current prefix of the request. This is the same as above but specified for prefixes.
 
