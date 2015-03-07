@@ -1,7 +1,7 @@
 Configurations
 ==============
 
-This page tells something about the available configurations (config/bootstrap.php).
+This page tells something about the available configurations you can use (config/bootstrap.php).
 
 Bootstrap
 ---------
@@ -15,13 +15,43 @@ Configurations
 
 The `CM.Roles`-configuration is an role-definition-array. [later more]
 
+```
+Configure::read('CM.Roles');
+
+// Would return:
+
+[
+	'Administrators' => [
+		(int) 0 => (int) 1
+	],
+	'Moderators' => [
+		(int) 0 => (int) 2
+	],
+	'Users' => [
+		(int) 0 => (int) 3
+	],
+	'Unregistered' => [
+		(int) 0 => (int) 4
+	]
+]
+```
+
 ### UserModel
 
-You can change the `CM.UserModel` if you want to use your own UserModel. This config has the default value: `CakeManager.Users`.
+You can change the `CM.UserModel` if you want to use your own UserModel.
+
+```
+Configure::read('CM.UserModel');
+
+// Would return
+
+'CakeManager.Users'
+```
 
 ### UserViews
 
-The CakeManager has default view-files. If you want to change them, you can change it this way:
+The CakeManager has default view-files for the UsersController. 
+If you want to change them, you can change it this way:
 
     Configure::write('CM.UserViews.login`, '/myPath/myFile');
     
@@ -29,10 +59,24 @@ Note that `CM.UserViews` is an array with a list of all actions.
 
 Current actions:
 - login
+- forgot_password
+- reset_password
+
+```
+Configure::read('CM.UserViews');
+
+// Would return
+
+[
+	'login' => 'CakeManager./Users/login',
+	'forgot_password' => 'CakeManager./Users/forgot_password',
+	'reset_password' => 'CakeManager./Users/reset_password'
+]
+```
 
 ### Admin UserViews
 
-Same as above, but then for the admin-views. The following actions are available:
+The CakeManager has default view-files for the UsersController (admin). The following actions are rendered:
 
 - index
 - view
@@ -40,9 +84,42 @@ Same as above, but then for the admin-views. The following actions are available
 - edit
 - new_password
 
-Example:
+### Admin RoleViews
 
-    Configure::write('CM.AdminUserViews.edit`, '/Admin/Users/edit'); 
-    // this will refer to a own edit file, and not the `CakeManager.`-file
-    
-    
+The CakeManager has default view-files for the RolesController (admin). The following actions are rendered:
+
+- index
+- view
+- add
+- edit
+
+### Mail
+
+The CakeManager is able to send mails automatically when an user has been registered, or requests a new password.
+
+```
+Configure::read('CM.Mail');
+
+// Would return
+
+[
+	'From' => [
+		'noreply@cakemanager.org' => 'CakeManager'
+	],
+	'afterLogin' => true
+]
+```
+
+The CakeManager automatically sends a mail on the callback `afterLogin`. If you want to disable that event, use:
+
+```
+Configure::write('CM.Mail.afterLogin', false);
+```
+
+The `From`-key is to define the `from()` of the `Mail`-class. The mail is default sent from `noreply@cakemanager.org` but can be changed:
+
+```
+Configure::write('CM.Mail.From', ['info@cakemanager.org' => 'CakeManager Suport']);
+```
+
+> Note: This features are in early development and not completely supported
