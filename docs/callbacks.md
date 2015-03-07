@@ -11,7 +11,7 @@ To get a clear view about the request-flow, read [this section: Request Flow](re
 Components
 ==========
 
-### Manager
+## Manager
 
 ### Component.Manager.beforeFilter
 
@@ -52,6 +52,9 @@ Called after the component's `shutdown`-event, and before the action-render-meth
 
 Controllers
 ===========
+
+Users
+-----
 
 There are no events registered for the controllers, but we will add some events soon!
 
