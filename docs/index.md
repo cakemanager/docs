@@ -32,6 +32,7 @@ For issues or new features, a new branch will be created like `develop-awesome-f
 
 Support
 --------
+If you need help, you are welcome at https://gitter.im/cakemanager/cakephp-cakemanager. Here we will talk about related items to CakePHP and the CakeManager.
 
 For bugs and feature requests, please create a new [issue](https://github.com/cakemanager/cakephp-cakemanager/issues).
 
