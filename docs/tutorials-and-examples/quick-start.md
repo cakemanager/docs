@@ -7,9 +7,14 @@ In this tutorial we will add our CakeManager. So, that means we will have our lo
 
 [doc_toc]
 
+Requirements
+------------
+
+- A fresh copy of CakePHP 3.x
+- Composer
+
 Getting the CakeManager
 -----------------------
-We asume you already got a new project of CakePHP. You can call the plugin via composer:
 
     "require": {
         "cakemanager/cakephp-cakemanager": "dev-master"
@@ -18,17 +23,10 @@ We asume you already got a new project of CakePHP. You can call the plugin via c
 After that we need to load our plugin in our `config/bootstrap.php`.
 
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
-        
     Plugin::load('Utils');
-        
-    Plugin::load('Crud');
-
 
 Creating the tables
 --------------------
-Schema's we know from CakePHP 2.x are not supported anymore. But we got the migrations-plugin from [CakePHP](https://github.com/cakephp/migrations). 
-
-Run the following command in your shell to automatically generate the `users` and `roles`-table:
 
     $ bin/cake migrations migrate -p CakeManager
     
@@ -36,16 +34,7 @@ This command tells the Migrations-plugin to migrate (install) the CakeManager. T
 
 Loading the roles and user
 -----------------
-We created a shell to load the default roles and adding an user. The CakeManager has the following subcommands:
-
-**initialize**  
-Execute The Initialize-method. This will add some important data to your database.
-
-**user**        
-Execute The User-task. You will be able to create an user.
-
-### Initialize
-First we will add the roles via the `initialize` subcommand:
+Run the following commands in your command prompt:
 
     $ bin/cake manager initialize roles
     
@@ -56,19 +45,14 @@ This command creates the default roles of the CakeManager:
 - Users
 - Unregistered
 
-### User
-Now we need an administrator to login. Use the folling to register yourself:
+Via this command you are able to create the first user:
 
     $ bin/cake manager user
     
-Now the shell will ask you for your e-mailaddress and password
-
-> Note: The password is not hidden!
 
 Adding the components
 --------------------
- 
-We are almost ready to login in our system. First we have to load some important components in your `AppControllers` `initialize`:
+You have to load the following components: 
 
         public function initialize() {
         
@@ -78,42 +62,17 @@ We are almost ready to login in our system. First we have to load some important
         
         }
 
-> Note: Further reading: [ManagerComponent](../components/manager.md).
+> Note: Further reading: [ManagerComponent](/docs/1.0/components/manager/).
 
-> Note: Documentation about the [Utils plugin](http://cakemanager-utils.readthedocs.org).
+> Note: Documentation about the [Utils plugin](/docs/utils/1.0/components/manager/).
 
-What's next
+Done
 -----------
 
 Now you are able to login via `/login`. When you are logged in you are able to manage your users and roles. By extending your app with more plugins of [cakemanager](https://github.com/cakemanager) your menu-list will expand with many more features!
 
-Check out or list of plugins HERE.
-
-Adding menu-items
------------------
-
-Now we will expand our app. First we want to add some custom menu-items.
-Via the MenuComponent you are able to register menu-items per sections. 
-
-An example: the admin-area uses the `main` section for menu-items (sidebar). We want to add our items to the menu-list
-
-        $this->Menu->add('My new Item', [   
-            'url' => [
-                'plugin'     => false,
-                'prefix'     => 'admin',
-                'controller' => 'CustomController',
-                'action'     => 'index'
-            ]
-        ]);
-        
-    
-This is how we add a menu to our list. Mark that its important where you will regsiter your menu-items. Adding them in your `initialize` or `beforeFilter` method will add your item to your own website, but also to the admin-area!
-You can validate with the following code: `if($this->Manager->prefix("admin")) {}`. Leave the parameter empty to check for no prefix.
-
-> Note: Further reading: [Menus [Utils-plugin]](http://cakemanager-utils.readthedocs.org/en/develop/components/menu).
-
-Furthur Reading
----------------
+Further reading
+-------
 
 Thats it! You are ready to go. We've added the CakeManager to your website. You are able to login, extend your admin-area, and use the features of this plugin, and the [Utils plugin](http://github.com/cakemanager/cakephp-utils).
 
@@ -121,9 +80,10 @@ There is much more available at our [GitHub page](https://github.com/cakemanager
 
 Good luck with programming! And don't forget to have fun ;).
 
-### Tutorials
+Here are some suggestions related to this section:
 
-- [Authorization Tutorial](authorization.md) - This tutorial explains how to handle authorization quickely.
-
-### Some suggestions
-
+- CakePHP's [Quick Start](http://book.cakephp.org/3.0/en/quickstart.html) for 3.x.
+- Read the [Manager Component](/docs/1.0/components/manager/) for detailed documentation about the Manager-component.
+- Read the [Request Flow](/docs/1.0/request-flow/) for detailed documentation about callbacks and events via the CakeManager.
+- Read the [Configurations](/docs/1.0/configurations/) for detailed documentation about the available configurations of the plugin.
+- Read the [Utils Docs](/docs/utils/1.0/) for documentation about all components and behaviors from the [Utils Plugin](https://github.com/cakemanager/cakephp-utils).
