@@ -1,7 +1,9 @@
 Authorization
 =============
 
-We want to register our authorization easily. We gonna help you!
+We want to register our authorization easily. We gonna help you. In this tutorial we will explain you how to work with the [Authorizer component](docs/utils/1.0/components/authorizer).
+
+[doc_toc]
 
 Loading the Component
 ---------------------
@@ -15,7 +17,7 @@ Load the component in your `AppController` by using:
         // code
         
         $this->loadComponent('CakeManager.Manager');
-        $this->loadComponent('CakeManager.Authorizer');
+        $this->loadComponent('Utils.Authorizer');
         
         // code
     }
