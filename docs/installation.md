@@ -60,9 +60,9 @@ You have to load the following components:
         
         }
 
-> Note: Further reading: [ManagerComponent](docs/1.0/components/manager/).
+> Note: Further reading: [ManagerComponent](/docs/1.0/components/manager/).
 
-> Note: Documentation about the [Utils plugin](docs/utils/1.0/components/manager/).
+> Note: Documentation about the [Utils plugin](/docs/utils/1.0/components/manager/).
 
 Done
 -----------
@@ -77,7 +77,7 @@ You just started with the CakeManager.
 Here are some suggestions related to this section:
 
 - CakePHP's [Quick Start](http://book.cakephp.org/3.0/en/quickstart.html) for 3.x.
-- Read the [Manager Component](docs/1.0/components/manager/) for detailed documentation about the Manager-component.
-- Read the [Request Flow](docs/1.0/request-flow/) for detailed documentation about callbacks and events via the CakeManager.
-- Read the [Configurations](docs/1.0/configurations/) for detailed documentation about the available configurations of the plugin.
-- Read the [Utils Docs](docs/utils/1.0/) for documentation about all components and behaviors from the [Utils Plugin](https://github.com/cakemanager/cakephp-utils).
+- Read the [Manager Component](/docs/1.0/components/manager/) for detailed documentation about the Manager-component.
+- Read the [Request Flow](/docs/1.0/request-flow/) for detailed documentation about callbacks and events via the CakeManager.
+- Read the [Configurations](/docs/1.0/configurations/) for detailed documentation about the available configurations of the plugin.
+- Read the [Utils Docs](/docs/utils/1.0/) for documentation about all components and behaviors from the [Utils Plugin](https://github.com/cakemanager/cakephp-utils).
