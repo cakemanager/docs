@@ -3,10 +3,7 @@ UsersController
 
 The `UsersController` handles most of the login-actions. 
 
-- [Actions](#actions)
-- [Changing the Views](#changing-the-views)
-- [Custom UsersController](#custom-userscontroller)
-
+[doc_toc]
 
 Actions
 -------
