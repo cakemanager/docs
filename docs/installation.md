@@ -1,7 +1,7 @@
 Installation
 ============
 
-This section gives a brief description how to install the CakeManager and it's requirements
+This section gives a brief description how to install the CakeManager and it's requirements.
 
 [doc_toc]
 
@@ -72,7 +72,11 @@ Now you are able to login via `/login`. When you are logged in you are able to m
 Further reading
 -------
 
-You just started with the CakeManager.
+Thats it! You are ready to go. We've added the CakeManager to your website. You are able to login, extend your admin-area, and use the features of this plugin, and the [Utils plugin](http://github.com/cakemanager/cakephp-utils).
+
+There is much more available at our [GitHub page](https://github.com/cakemanager). 
+
+Good luck with programming! And don't forget to have fun ;).
 
 Here are some suggestions related to this section:
 
