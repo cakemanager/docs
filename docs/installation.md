@@ -21,11 +21,7 @@ Getting the CakeManager
 After that we need to load our plugin in our `config/bootstrap.php`.
 
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
-        
     Plugin::load('Utils');
-        
-    Plugin::load('Crud');
-
 
 Creating the tables
 --------------------
