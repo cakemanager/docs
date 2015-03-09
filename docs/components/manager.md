@@ -1,6 +1,19 @@
 Manager-Component
 ====================
 
+[doc_toc]
+
+
+Loading
+-------
+
+You can load the component in your AppController:
+
+            public function initialize() {
+                // code
+                $this->loadComponent('CakeManager.Manager');
+            }
+
 The ManagerComponent is the heartbeat of the plugin. This component adds several callbacks and events, and registers the default values for the AuthCompnent to add authorization to your application. In this section we will explain some configurations and we will give some tips and tricks to increase the flexibility of your application.
 
 Configurations
@@ -79,4 +92,4 @@ Available menu-areas: main and navbar
 Events and Callbacks
 --------------------
 
-The `ManagerComponent` registers many callbacks and events witch are documented on the [Callbacks-page](../callbacks.md).
+The `ManagerComponent` registers many callbacks and events witch are documented on the [Callbacks-page](docs/1.0/callbacks).
