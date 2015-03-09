@@ -5,6 +5,8 @@ The best way to experience and learn CakeManager is to sit down and build someth
 
 In this tutorial we will add our CakeManager. So, that means we will have our login-system, and will be able to use extra plugins to make our work easier. We asume you already did the [QuikStart-tutorial from CakePHP](http://book.cakephp.org/3.0/en/quickstart.html).
 
+[doc_toc]
+
 Getting the CakeManager
 -----------------------
 We asume you already got a new project of CakePHP. You can call the plugin via composer:
