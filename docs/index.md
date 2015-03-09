@@ -18,9 +18,9 @@ The [source (http://github.com/cakemanager/cakephp-cakemanager)](http://github.c
 
 Branches
 --------
-**master** is our master-branche. This will be the latest version and latest documentation.
+**master** is our master-branch. This will be the latest version and latest documentation.
 
-**develop** will be used to develop. Warning; this branche may contain non-stable code.
+**develop** will be used to develop. Warning; this branch may contain non-stable code.
 
 To Do
 -----
