@@ -11,7 +11,7 @@ To get support about the documentation, please use the [issues](https://github.c
 Contributing
 ------------
 
-If you have a good idea for a new feature, feel free to pull or open a new  [issue](https://github.com/cakemanager/cakephp-cakemanager/issues). Pull requests are always more than welcome.
+If you have a good idea for a new feature, feel free to pull or open a new  [issue](https://github.com/cakemanager/cakephp-cakemanager/issues). Pull requests are always more than welcome. [Here](http://cakemanager.org/docs/1.0/contributing/documentation/) you can read more about contributing to the documentation.
 
 License
 -------
