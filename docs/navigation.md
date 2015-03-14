@@ -9,6 +9,9 @@
     - [Manager](/docs/1.0/components/manager)
 - Controllers
     - [UsersController](/docs/1.0/controllers/users)
+- Models
+    - [UsersModel](/docs/1.0/models/users)
+    - [RolesModel](/docs/1.0/models/roles)
 - General
     - [Configurations](/docs/1.0/configurations)
     - [Authorization](/docs/1.0/authorization)
