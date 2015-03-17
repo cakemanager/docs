@@ -55,11 +55,16 @@ Adding the components
 You have to load the following components: 
 
         public function initialize() {
-        
-            $this->loadComponent('CakeManager.Manager');    // the manager itself
-            $this->loadComponent('Utils.Authorizer');       // must have for your authorization
-            $this->loadComponent('Utils.Menu');             // must have for adding menu-items to your app (especially the admin-area)
-        
+            $this->loadComponent('CakeManager.Manager');
+            $this->loadComponent('Utils.Authorizer');
+            $this->loadComponent('Utils.Menu');
+        }
+
+You also should add this method to prevent exceptions:
+
+	    public function isAuthorized($user)
+        {
+            return true;
         }
 
 > Note: Further reading: [ManagerComponent](/docs/1.0/components/manager/).
