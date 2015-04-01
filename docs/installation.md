@@ -15,7 +15,7 @@ Getting the CakeManager
 -----------------------
 
     "require": {
-        "cakemanager/cakephp-cakemanager": "dev-master"
+        "cakemanager/cakephp-cakemanager": "dev-develop"
     }
 
 After that we need to load our plugin in our `config/bootstrap.php`.
