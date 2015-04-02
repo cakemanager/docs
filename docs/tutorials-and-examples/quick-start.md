@@ -88,7 +88,7 @@ Good luck with programming! And don't forget to have fun ;).
 Here are some suggestions related to this section:
 
 - CakePHP's [Quick Start](http://book.cakephp.org/3.0/en/quickstart.html) for 3.x.
-- This example shows you how to expand your admin-panel: [Expanding the Admin-panel](docs/1.0/tutorials-and-examples/expanding-the-admin-panel).
+- This example shows you how to expand your admin-panel: [Expanding the Admin-panel](/docs/1.0/tutorials-and-examples/expanding-the-admin-panel).
 - Read the [Manager Component](/docs/1.0/components/manager/) for detailed documentation about the Manager-component.
 - Read the [Request Flow](/docs/1.0/request-flow/) for detailed documentation about callbacks and events via the CakeManager.
 - Read the [Configurations](/docs/1.0/configurations/) for detailed documentation about the available configurations of the plugin.
