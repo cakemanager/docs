@@ -48,6 +48,9 @@ Now we gonna define our authorization per controller. Lets take an example for '
         return $this->Authorizer->authorize();
     }
 
+Done
+----
+
 Thats it! Hopefully the comments explain it's code. For more info you can read the [documentation [Utils plugin]](http://cakemanager-utils.readthedocs.org/en/develop/components/authorizer/) about the `AuthorizerComponent`.
 
 Further Reading
