@@ -1,5 +1,5 @@
 Callbacks and Events
-=========
+====================
 
 The CakeManager registers multiple callbacks. This is helpfull to make your app flexible.
 Plugins are able to do stuff automatically, and you are able to keep your code clean.
@@ -54,6 +54,27 @@ Called after the component's `shutdown`-event, and before the action-render-meth
 Controllers
 ----------
 
+### Controller.Users.afterRegister
+
+This event is called after a new user registered.
+
+**Data**
+- `user` - An array with the userdata who registered.
+
+### Controller.Users.afterInvalidRegister
+
+This event is called after a new user could not register.
+
+**Data**
+- `user` - An array with the userdata who tried to register.
+
+### Controller.Users.afterActivate
+
+This event is called after an user activated his account.
+
+**Data**
+- `email` - The e-mailaddress of the activated user.
+
 ### Controller.Users.afterLogin
 
 This event is called after the user has been logged in succesfully.
@@ -75,9 +96,9 @@ This event is called after the user requested a new password
 **Data**
 - `user` - An array from the user who requested the new password
 
+### Controller.Users.afterResetPassword
 
-To Do:
+This event is called after the user reset his password.
 
-- AfterActivate
-- AfterResetPassword
-- AfterRegister (first we have to make a register-functionality :P)
+**Data**
+- `user` - An array from the user who reset his password.

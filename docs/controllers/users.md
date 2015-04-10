@@ -12,11 +12,34 @@ Actions
 
 The following actions are available:
 
+- register
 - login
 - activate
 - forgotPassword
 - resetPassword
 - logout
+
+### Register
+
+The register-action is used to register new users. New users will default carry the role `3`.
+That means that it's a normal user.
+
+If you don't want visitors to register you can disable the registration-option in your 
+`config/bootstrap.php`:
+
+        Configure::write('CM.Register', false);
+
+Default new users will have to activate their account via an e-mail (sent by the CM). You can 
+disable this option via the `config/bootstrap.php`:
+
+        Configure::write('CM.ActivationOnRegister', false);
+
+In this case no mail will be sent to the new user, and the users won't have to active its account.
+
+Available events:
+
+- ['Controller.Users.afterRegister](/docs/1.0/callbacks/#controllerusersafterregister)
+- ['Controller.Users.afterInvalidRegister](/docs/1.0/callbacks/#controllerusersafterinvalidregister)
 
 ### Login
 
@@ -24,6 +47,11 @@ This method logs the user in. After the user is logged in he will be redirected 
 the given url of his role. In the CakeManager you are able to set the redirect-url 
 per role. If an login fails, it will redirect to its referer action. This is because 
 you maybe want to use your own login-actions, but use the logic of the CakeManager.
+
+Available events:
+
+- ['Controller.Users.afterLogin](/docs/1.0/callbacks/#controllerusersafterlogin)
+- ['Controller.Users.afterInvalidLogin](/docs/1.0/callbacks/#controllerusersafterinvalidlogin)
 
 ### Activate
 
@@ -35,11 +63,19 @@ requires two values: `email` and `activation_id`. Example:
 http://domain.org/user/activate/admin@cakemanager.org/8asdfnqSDzxmAKcn237KJHf
 ```
 
+Available events:
+
+- ['Controller.Users.afterActivate](/docs/1.0/callbacks/#controllerusersafteractivate)
+
 ### Forgot Password
 
 The request-action is used to set a new `activation_key` for the user. The user has 
 to input his e-mailaddress. When the key is set, he is still able to login, however,
 he will receive an email to set a new password.
+
+Available events:
+
+- ['Controller.Users.afterForgotPassword](/docs/1.0/callbacks/#controllerusersafterforgotpassword)
 
 ### Reset Password
 
@@ -52,6 +88,10 @@ http://domain.org/user/new_password/admin@cakemanager.org/8asdfnqSDzxmAKcn237KJH
 
 After the new password is set, it will redirect to the login-action. When the action 
 fails, it will return to it's referer action.
+
+Available events:
+
+- ['Controller.Users.afterResetPassword](/docs/1.0/callbacks/#controllerusersafterresetpassword)
 
 ### Logout
 
@@ -72,6 +112,7 @@ rendering other view-files
 
 Available view-files:
 
+- register
 - login
 - forgotPassword
 - resetPassword
