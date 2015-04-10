@@ -3,6 +3,8 @@ Configurations
 
 This page tells something about the available configurations you can use (config/bootstrap.php).
 
+[doc_toc]
+
 Bootstrap
 ---------
 
