@@ -38,8 +38,8 @@ In this case no mail will be sent to the new user, and the users won't have to a
 
 Available events:
 
-- ['Controller.Users.afterRegister](/docs/1.0/callbacks/#controllerusersafterregister)
-- ['Controller.Users.afterInvalidRegister](/docs/1.0/callbacks/#controllerusersafterinvalidregister)
+- [Controller.Users.afterRegister](/docs/1.0/callbacks/#controllerusersafterregister)
+- [Controller.Users.afterInvalidRegister](/docs/1.0/callbacks/#controllerusersafterinvalidregister)
 
 ### Login
 
@@ -50,8 +50,8 @@ you maybe want to use your own login-actions, but use the logic of the CakeManag
 
 Available events:
 
-- ['Controller.Users.afterLogin](/docs/1.0/callbacks/#controllerusersafterlogin)
-- ['Controller.Users.afterInvalidLogin](/docs/1.0/callbacks/#controllerusersafterinvalidlogin)
+- [Controller.Users.afterLogin](/docs/1.0/callbacks/#controllerusersafterlogin)
+- [Controller.Users.afterInvalidLogin](/docs/1.0/callbacks/#controllerusersafterinvalidlogin)
 
 ### Activate
 
@@ -65,7 +65,7 @@ http://domain.org/user/activate/admin@cakemanager.org/8asdfnqSDzxmAKcn237KJHf
 
 Available events:
 
-- ['Controller.Users.afterActivate](/docs/1.0/callbacks/#controllerusersafteractivate)
+- [Controller.Users.afterActivate](/docs/1.0/callbacks/#controllerusersafteractivate)
 
 ### Forgot Password
 
@@ -75,7 +75,7 @@ he will receive an email to set a new password.
 
 Available events:
 
-- ['Controller.Users.afterForgotPassword](/docs/1.0/callbacks/#controllerusersafterforgotpassword)
+- [Controller.Users.afterForgotPassword](/docs/1.0/callbacks/#controllerusersafterforgotpassword)
 
 ### Reset Password
 
@@ -91,7 +91,7 @@ fails, it will return to it's referer action.
 
 Available events:
 
-- ['Controller.Users.afterResetPassword](/docs/1.0/callbacks/#controllerusersafterresetpassword)
+- [Controller.Users.afterResetPassword](/docs/1.0/callbacks/#controllerusersafterresetpassword)
 
 ### Logout
 
