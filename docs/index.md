@@ -30,6 +30,12 @@ Our branch-strategy:
 
 For issues or new features, a new branch will be created like `develop-awesome-feature`
 
+Roadmap
+-------
+
+Wanna know what we planned for the CakeManager in future? Check out our roadmaps at: https://github.com/cakemanager/cakephp-cakemanager/wiki.
+
+
 Support
 --------
 If you need help, you are welcome at https://gitter.im/cakemanager/cakephp-cakemanager. Here we will talk about related items to CakePHP and the CakeManager.
