@@ -59,8 +59,8 @@ Adding the components
 --------------------
 You have to load the following components: 
 
-        public function initialize() {
-        
+        public function initialize() 
+        {
             $this->loadComponent('CakeManager.Manager');
             $this->loadComponent('Utils.Authorizer');
             $this->loadComponent('Utils.Menu');
