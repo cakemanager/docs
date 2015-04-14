@@ -60,12 +60,23 @@ You can change the `CM.UserModel` if you want to use your own UserModel.
 
         'CakeManager.Users'
 
+### UserFields
+
+If you want to add your custom fields to the CakeManager (`/admin/manager/users/add` and `/admin/manager/users/edit`), you can use this array. Example adding some columns:
+
+        Configure::write('CM.UserFields', [
+            'first_name',
+            'last_name' => [
+                'type' => 'textarea'
+            ]
+        ]);
+
 ### UserViews
 
 The CakeManager has default view-files for the UsersController. 
 If you want to change them, you can change it this way:
 
-    Configure::write('CM.UserViews.login`, '/myPath/myFile');
+        Configure::write('CM.UserViews.login`, '/myPath/myFile');
     
 Note that `CM.UserViews` is an array with a list of all actions.
 
