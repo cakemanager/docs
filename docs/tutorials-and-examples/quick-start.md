@@ -20,7 +20,13 @@ Getting the CakeManager
         "cakemanager/cakephp-cakemanager": "dev-master"
     }
 
-After that we need to load our plugin in our `config/bootstrap.php`.
+After that we need to load our plugin. Use your shell...
+
+    $ bin/cake plugin load Utils
+    
+    $ bin/cake plugin load -b -r CakeManager
+    
+... or use your `config/bootstrap.php`:
 
     Plugin::load('CakeManager', ['bootstrap' => true, 'routes' => true]);
     Plugin::load('Utils');
@@ -54,17 +60,15 @@ Adding the components
 --------------------
 You have to load the following components: 
 
-        public function initialize() {
+        public function initialize() 
+        {
             $this->loadComponent('CakeManager.Manager');
             $this->loadComponent('Utils.Authorizer');
             $this->loadComponent('Utils.Menu');
-        }
-
-You also should add this method to prevent exceptions:
-
-	    public function isAuthorized($user)
-        {
-            return true;
+            
+            // used for the default index-page of CakePHP.
+            // this will allow a non-logged user.
+            $this->Auth->allow(['display']);
         }
 
 > Note: Further reading: [ManagerComponent](/docs/1.0/components/manager/).
