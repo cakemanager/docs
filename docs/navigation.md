@@ -5,6 +5,7 @@
 - Tutorials and Examples
     - [Quick Start](/docs/1.0/tutorials-and-examples/quick-start)
     - [Authorization](/docs/1.0/tutorials-and-examples/authorization)
+    - [Adding custom UserFields](/docs/1.0/tutorials-and-examples/adding-custom-user-fields)
     - [Expanding the Admin-panel](/docs/1.0/tutorials-and-examples/expanding-the-admin-panel)
 - Components
     - [Manager](/docs/1.0/components/manager)
