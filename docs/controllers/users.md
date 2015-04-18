@@ -83,7 +83,7 @@ The new_password-action is used to let the user set a new password. This action
 requires two values: `email` and `activation_id`. Example: 
 
 ```
-http://domain.org/user/new_password/admin@cakemanager.org/8asdfnqSDzxmAKcn237KJHf
+http://domain.org/user/resetPassword/admin@cakemanager.org/8asdfnqSDzxmAKcn237KJHf
 ```
 
 After the new password is set, it will redirect to the login-action. When the action 
