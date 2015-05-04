@@ -121,21 +121,11 @@ The CakeManager is able to send mails automatically when an user has been regist
 
         Configure::read('CM.Mail');
 
-        // Would return
+For the following e-mails configurations are available:
 
-        [
-            'From' => [
-                'noreply@cakemanager.org' => 'CakeManager'
-            ],
-            'afterLogin' => true
-        ]
+- `CM.Mail.activation`
+- `CM.Mail.activationConfirmation`
+- `CM.Mail.forgotPassword`
+- `CM.Mail.passwordConfirmation`
 
-The CakeManager automatically sends a mail on the callback `afterLogin`. If you want to disable that event, use:
-
-        Configure::write('CM.Mail.afterLogin', false);
-
-The `From`-key is to define the `from()` of the `Mail`-class. The mail is default sent from `noreply@cakemanager.org` but can be changed:
-
-        Configure::write('CM.Mail.From', ['info@cakemanager.org' => 'CakeManager Suport']);
-
-> Note: This features are in early development and not completely supported
+> Read more about e-mailconfigurations at [the EmailListenerComponent docs](/docs/1.0/components/email-listener).

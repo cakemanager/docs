@@ -9,6 +9,7 @@
     - [Expanding the Admin-panel](/docs/1.0/tutorials-and-examples/expanding-the-admin-panel)
 - Components
     - [Manager](/docs/1.0/components/manager)
+    - [EmailListener](/docs/1.0/components/email-listener)
 - Controllers
     - [UsersController](/docs/1.0/controllers/users)
 - Models
