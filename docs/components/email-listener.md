@@ -99,3 +99,18 @@ http://book.cakephp.org/3.0/en/core-libraries/email.html#using-transports
 - `from` - The `from` key of the `Email`-class. 
 http://book.cakephp.org/3.0/en/core-libraries/email.html#configuration-profiles
 
+
+Sending e-mails manually
+------------------------
+
+Maybe in some cases you want to send an activation-mail or something manually. This is very easy for the `EmailListener`.
+Use the following code in your controller:
+
+        $this->EmailListener->activation($user);
+
+`$user` should be an array with the userdata. The following methods are available:
+
+- `EmailListenerComponent::activation($user)`
+- `EmailListenerComponent::activationConfirmation($user)`
+- `EmailListenerComponent::forgotPassword($user)`
+- `EmailListenerComponent::passwordConfirmation($user)`
