@@ -53,12 +53,18 @@ An example of the default configurations:
 This settings can be changed by the following example:
 
     // in your AppControllers initialize-method
-    $this->Manager->config('Auth.UserModel', 'MyCustomUserModel');
+    $this->loadComponent('CakeManager.Manager', [
+        'Auth' => [
+            'UserModel' => 'MyCustomUserModel'
+        ]
+    ]);
     
 If you don't want to let the `ManagerComponent` loading the `AuthComponent`, use the following code:
 
     // in your AppControllers initialize-method
-    $this->Manager->config('Auth', false);
+    $this->loadComponent('CakeManager.Manager', [
+        'Auth' => false
+    ]);
     
 The `AuthComponent` won't be loaded anymore, and you are free to add your own `AuthComponent`.
 
