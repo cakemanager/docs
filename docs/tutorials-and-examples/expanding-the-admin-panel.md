@@ -25,17 +25,14 @@ Of course you need your own controllers for the admin-area. This can be done by 
         namespace App\Controller\Admin;
 
         use App\Controller\AppController;
-        use CakeManager\Model\Entity\Meta;
 
         class BookmarksController extends AppController
         {
-            
             public function isAuthorized($user) {
                 $this->Authorizer->action(['*'], function ($auth) {
                     $auth->allowRole(1); // only allow administrators
                 });
             }
-
         }
 
 You see that the namespace ends with `\Admin`. This is all you need, the CakeManager will do its stuff automatically.
@@ -49,7 +46,6 @@ Menu-items
 Your controller has been made, now we need a menu-item to move to it. This code can be placed in your `AppController`.
 
         public function initMenuItems() {
-
             $this->Menu->add('Bookmarks', [
                 'url' => [
                     'plugin' => false,
@@ -58,7 +54,6 @@ Your controller has been made, now we need a menu-item to move to it. This code 
                     'action' => 'index'
                 ]
             ]);
-
         }
 
 The `initMenuItems`-method is automatically called by the `MenuComponent`. The `add`-method will add a new item to the menu.
