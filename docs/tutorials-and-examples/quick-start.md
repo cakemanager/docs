@@ -17,8 +17,10 @@ Getting the CakeManager
 -----------------------
 
     "require": {
-        "cakemanager/cakephp-cakemanager": "dev-master"
+        "cakemanager/cakephp-cakemanager":  "~1.0"
     }
+
+Each time you run php composer.phar update you will receive the latest stable releases when using the default version constraint ~1.0. Only bugfix and minor version releases of 1.x will be used when updating.
 
 After that we need to load our plugin. Use your shell...
 
