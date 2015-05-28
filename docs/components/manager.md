@@ -59,6 +59,21 @@ This settings can be changed by the following example:
         ]
     ]);
     
+The Users model can be extended and used alongside another model such as UserDetails:
+
+    // in your AppControllers initialize-method
+    $this->loadComponent('CakeManager.Manager', [
+        'Auth' => [
+                'authenticate' => [
+                    'Form' => [
+                        'contain' => [
+                            'UserDetails'
+                        ]
+                    ]
+            ]
+        ]
+    ]);
+    
 If you don't want to let the `ManagerComponent` loading the `AuthComponent`, use the following code:
 
     // in your AppControllers initialize-method
