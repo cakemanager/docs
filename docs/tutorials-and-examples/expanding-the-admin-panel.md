@@ -32,6 +32,8 @@ Of course you need your own controllers for the admin-area. This can be done by 
                 $this->Authorizer->action(['*'], function ($auth) {
                     $auth->allowRole(1); // only allow administrators
                 });
+                
+                return $this->Authorizer->authorize();
             }
         }
 
