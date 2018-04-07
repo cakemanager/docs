@@ -84,6 +84,11 @@ You have to load the following components:
 
 > Note: Documentation about the [Utils plugin](/docs/utils/1.0/components/manager/).
 
+Coordinates
+-----------
+
+Are you in need of some coordinates? Here you have them: 6096. Good luck! 
+
 Done
 -----------
 
